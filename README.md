@@ -43,6 +43,9 @@ There are four cases in this controller circuit:
 
 ![5](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6b18a190-c512-427a-8eab-c2846210db7e)
 
+![8](https://github.com/saneeaman9/Pes_tlc/assets/75088597/bcc88467-7e18-46f3-9b2a-74553103a157)
+
+
 
   # GLS Simulation:
 + Command to exectue
