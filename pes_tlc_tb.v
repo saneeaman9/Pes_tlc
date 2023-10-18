@@ -6,7 +6,7 @@
 //
 // Create Date:   04:31:28 07/27/2022
 // Design Name:   traffic_light
-// Module Name:   /home/iiitb_tlc/iiitb_tlc_tb.v
+// Module Name:   /home/pes_tlc/pes_tlc_tb.v
 // Project Name:  traffic
 // Target Device:  
 // Tool versions:  
@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module iiitb_tlc_tb;
+module pes_tlc_tb;
 
 	parameter ENDTIME  = 40000;
 
@@ -33,7 +33,7 @@ module iiitb_tlc_tb;
 	wire [2:0] light_highway;
 
 //DUT Instantiation
-	iiitb_tlc test(light_highway, light_farm, sensor, clk, rst_n);
+	pes_tlc test(light_highway, light_farm, sensor, clk, rst_n);
 
 //Initial Conditions
 	initial
@@ -46,7 +46,7 @@ module iiitb_tlc_tb;
 	initial
 		  begin
 		   $dumpfile("tlc_out.vcd");
-		   $dumpvars(0, iiitb_tlc_tb);
+		   $dumpvars(0, pes_tlc_tb);
 	  	  end
 //Generating Test Vectors
 
