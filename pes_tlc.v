@@ -5,7 +5,7 @@
 // 
 // Create Date:    13:32:27 07/24/2022 
 // Design Name:	   traffic_light
-// Module Name:    /home/iiitb_tlc/iiitb_tlc.v 
+// Module Name:    /home/pes_tlc/pes_tlc.v 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 // Verilog project: Verilog code for traffic light controller
-module iiitb_tlc(light_highway, light_farm, C, clk, rst_n);
+module pes_tlc(light_highway, light_farm, C, clk, rst_n);
 
 	parameter HGRE_FRED = 2'b00, // Highway green and farm red
 		  HYEL_FRED = 2'b01,// Highway yellow and farm red
