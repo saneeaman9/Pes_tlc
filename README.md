@@ -14,6 +14,86 @@ There are four cases in this controller circuit:
 3. Red on highway and green on farm way
 4. Red on highway and yellow on farm way.
 
+<br>
+
+# iverilog & GTKWave
+<details>
+<summary>Steps to install iVerilog and GTKWave</summary>
+<br>
+
+## iverilog and GTKWave
+Icarus Verilog (iverilog) is a Verilog simulation and synthesis tool. It operates as a compiler, compiling source code written in Verilog (IEEE-1364) into some target format. For batch simulation, the compiler can generate an intermediate form called vvp assembly. This intermediate form is executed by the ''vvp'' command. For synthesis, the compiler generates netlists in the desired format. The compiler proper is intended to parse and elaborate design descriptions written to the IEEE standard IEEE Std 1364-2005.
+
+GTKWave is a VCD waveform viewer based on the GTK library. This viewer support VCD and LXT formats for signal dumps. Waveform dumps are written by the Icarus Verilog runtime program vvp. The user uses $dumpfile and $dumpvars system tasks to enable waveform dumping, then the vvp runtime takes care of the rest. The output is written into the file specified by the $dumpfile system task. If the $dumpfile call is absent, the compiler will choose the file name dump.vcd or dump.lxt, depending on runtime flags.
+
+**To install iverilog and GTKWave in Ubuntu, open your terminal and type the following commands**
+
+```
+$ sudo apt-get update
+$ sudo apt get iverilog
+$ sudo apt get install iverilog gtkwave
+```
+
+**To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal**
+```
+$   sudo apt install -y git
+$   git clone https://github.com/majilokesh/iiitb_tlc.git
+$   cd iiitb_tlc
+$   iverilog iiitb_tlc.v iiitb_tlc_tb.v
+$   ./a.out
+$   gtkwave tlc_out.vcd
+```
+
+## yosys – Yosys Open SYnthesis Suite
+Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains.
+
+Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates.
+
+Synthesis takes place in multiple steps:
+  * Converting RTL into simple logic gates.
+  * Mapping those gates to actual technology-dependent logic gates available in the technology libraries.
+  * Optimizing the mapped netlist keeping the constraints set by the designer intact.
+
+Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the yosys C++ code base.
+
+Yosys is free software licensed under the ISC license (a GPL compatible license that is similar in terms to the MIT license or the 2-clause BSD license).
+
+You need a C++ compiler with C++11 support (up-to-date CLANG or GCC is recommended) and some standard tools such as GNU Flex, GNU Bison, and GNU Make. TCL, readline and libffi are optional (see `ENABLE_*` settings in Makefile). Xdot (graphviz) is used by the ``show`` command in yosys to display schematics.
+
+For example on Ubuntu the following commands will install all prerequisites for building yosys:
+```
+$ sudo apt-get install build-essential clang bison flex \ libreadline-dev gawk tcl-dev libffi-dev git \ graphviz xdot pkg-config python3 libboost-system-dev \ libboost-python-dev libboost-filesystem-dev zlib1g-dev
+```
+To configure the build system to use a specific compiler, use one of the following command:
+```
+$ make config-clang
+$ make config-gcc
+```
+For other compilers and build configurations it might be necessary to make some changes to the config section of the Makefile.
+```
+$ vi Makefile            # ..or..
+$ vi Makefile.conf
+```
+To build Yosys simply type 'make' in this directory.
+```
+$ make
+$ sudo make install
+```
+Note that this also downloads, builds and installs ABC (using yosys-abc as executable name).
+
+Tests are located in the tests subdirectory and can be executed using the test target. Note that you need gawk as well as a recent version of iverilog (i.e. build from git). Then, execute tests via:
+```
+$ make test
+```
+
+
+</details>
+
+
+
+<br>
+
+
 # Block Diagram
  ![block](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6eea77e1-b941-4e90-8137-761905c90a18)
 
