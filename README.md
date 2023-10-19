@@ -37,9 +37,9 @@ $ sudo apt get install iverilog gtkwave
 **To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal**
 ```
 $   sudo apt install -y git
-$   git clone https://github.com/majilokesh/iiitb_tlc.git
+$   git clone https://github.com/saneeaman9/Pes_tlc.git
 $   cd iiitb_tlc
-$   iverilog iiitb_tlc.v iiitb_tlc_tb.v
+$   iverilog pes_tlc.v pes_tlc_tb.v
 $   ./a.out
 $   gtkwave tlc_out.vcd
 ```
