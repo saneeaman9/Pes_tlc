@@ -16,9 +16,9 @@ There are four cases in this controller circuit:
 
 <br>
 
-# iverilog & GTKWave
+# iverilog, GTKWave & yosys.
 <details>
-<summary>Steps to install iVerilog and GTKWave</summary>
+<summary>Steps to install iVerilog & GTKWave</summary>
 <br>
 
 ## iverilog and GTKWave
@@ -43,6 +43,13 @@ $   iverilog iiitb_tlc.v iiitb_tlc_tb.v
 $   ./a.out
 $   gtkwave tlc_out.vcd
 ```
+
+</details>
+
+
+<details>
+<summary>Steps to install yosys.</summary>
+<br>
 
 ## yosys – Yosys Open SYnthesis Suite
 Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains.
