@@ -38,7 +38,7 @@ $ sudo apt get install iverilog gtkwave
 ```
 $   sudo apt install -y git
 $   git clone https://github.com/saneeaman9/Pes_tlc.git
-$   cd iiitb_tlc
+$   cd Pes_tlc
 $   iverilog pes_tlc.v pes_tlc_tb.v
 $   ./a.out
 $   gtkwave tlc_out.vcd
