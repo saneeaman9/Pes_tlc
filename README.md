@@ -150,5 +150,5 @@ $ make test
 
 ![4](https://github.com/saneeaman9/Pes_tlc/assets/75088597/d6384750-fa0f-4850-b4c3-520852016c0d)
 
-  
-![7](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6b36f97d-9f0a-425c-992e-4bfa87d53ff2)
+![Screenshot 2023-10-20 175908](https://github.com/saneeaman9/Pes_tlc/assets/75088597/423d1f28-4076-4f8b-a1fc-f5ab3935041d)
+
