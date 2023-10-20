@@ -128,6 +128,12 @@ $ make test
   show
   ```
 
+  ![1](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6476137a-9679-4687-813f-c653cda9ed19)
+
+
+  ![3](https://github.com/saneeaman9/Pes_tlc/assets/75088597/05c457a8-097c-4c1e-b99b-155f2aff9169)
+
+
 ![5](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6b18a190-c512-427a-8eab-c2846210db7e)
 
 ![8](https://github.com/saneeaman9/Pes_tlc/assets/75088597/bcc88467-7e18-46f3-9b2a-74553103a157)
@@ -141,4 +147,8 @@ $ make test
   ./a.out
   gtkwave pes_tlc_tb.vcd
   ```
+
+![4](https://github.com/saneeaman9/Pes_tlc/assets/75088597/d6384750-fa0f-4850-b4c3-520852016c0d)
+
+  
 ![7](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6b36f97d-9f0a-425c-992e-4bfa87d53ff2)
