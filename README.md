@@ -201,7 +201,7 @@ type **magic** terminal to check whether it installed succesfully or not. type *
 
 ### Getting started with the Flow
 
-* In the OpenLane folder enther the following commands.
+* In the OpenLane folder enter the following commands.
 
 ```bash
 sudo make mount
