@@ -152,3 +152,161 @@ $ make test
 
 ![Screenshot 2023-10-20 175908](https://github.com/saneeaman9/Pes_tlc/assets/75088597/423d1f28-4076-4f8b-a1fc-f5ab3935041d)
 
+## OpenLane2 Installation
+
+[Follow this link to install openlane2.](https://github.com/efabless/openlane2)
+
+## Magic
+
+Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
+More about magic at http://opencircuitdesign.com/magic/index.html
+
+Run following commands one by one to fulfill the system requirement.
+
+```bash
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+```
+**To install magic**
+goto home directory
+
+```
+$   git clone https://github.com/RTimothyEdwards/magic
+$   cd magic/
+$   ./configure
+$   sudo make
+$   sudo make install
+```
+type **magic** terminal to check whether it installed succesfully or not. type **exit** to exit magic.
+
+# OpenLane Flow
+
+* To begin, go to the OpenLane folder.
+* Create a folder with your "design_name" in the designs folder.
+* Then `cd pes_tlc`.
+* Now create a new directory `src` and add your design verilog file here.
+* Also download [these](https://github.com/saneeaman9/Pes_tlc/tree/main/src) files into the src folder.
+  
+![Screenshot 2023-10-31 093139](https://github.com/saneeaman9/Pes_tlc/assets/75088597/d975c33f-a229-44b8-a2bb-6230c986c45b)
+
+* Now in the Openlane folder create a folder `pdks`.
+* Add the sky130A files here.
+
+
+### Getting started with the Flow
+
+* In the OpenLane folder enther the following commands.
+
+```bash
+sudo make mount
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design pes_tlc
+```
+
+![1](https://github.com/saneeaman9/Pes_tlc/assets/75088597/9923f1f2-2ad4-49ab-b687-780a87b29f57)
+
+
+![2](https://github.com/saneeaman9/Pes_tlc/assets/75088597/5f2a0b74-7a59-4239-a63f-ab9f5c490167)
+
+### Synthesis
+
+* Enter ```run_synthesis```
+
+![3_1](https://github.com/saneeaman9/Pes_tlc/assets/75088597/d0b91960-141c-4822-b14e-2e42b8248046)
+
+**Physical Cells**
+
+![3](https://github.com/saneeaman9/Pes_tlc/assets/75088597/87e0b2b9-7b5c-4415-a529-2fb06bc5c650)
+
+
+### Floorplan
+
+* Enter ```run_floorplan```
+
+![4](https://github.com/saneeaman9/Pes_tlc/assets/75088597/89afc79b-bbcb-4ef1-a2be-79e3e5162800)
+
+
+* To view the floorplan go to `/home/bigpoppa/OpenLane/designs/pes_tlc/runs/RUN_2023.10.30_13.41.08/results/floorplan
+`
+ 
+* Enter the command:
+
+```bash
+
+magic -T /home/bigpoppa/OpenLane/pdks/sky130A/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_tlc.def &
+
+```
+
+![4](https://github.com/saneeaman9/Pes_tlc/assets/75088597/d6270688-7141-4130-921b-bf4be7e8a8c3)
+
+
+### Placement
+
+* Enter ```run_placement```
+
+* To view the design 
+
+```bash
+
+magic -T /home/bigpoppa/OpenLane/pdks/sky130A/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_tlc.def &
+
+```
+
+![6 placement](https://github.com/saneeaman9/Pes_tlc/assets/75088597/cbc11bb3-d6a2-4103-b830-86077a6c12e7)
+
+
+
+### CTS
+
+* Enter ```run_cts```
+
+**Reports from the CTS**
+
+![7_1](https://github.com/saneeaman9/Pes_tlc/assets/75088597/a6cee785-140c-4022-a9ef-b5c336a3ec9d)
+
+
+![7_2](https://github.com/saneeaman9/Pes_tlc/assets/75088597/67b6e283-d753-4bba-ba87-b968cf7c8372)
+
+![7_3](https://github.com/saneeaman9/Pes_tlc/assets/75088597/6878c571-4207-4afd-ba56-f947b564f5ae)
+
+![7_4](https://github.com/saneeaman9/Pes_tlc/assets/75088597/68cb4024-45fa-4b16-8ad8-252e404b9d93)
+
+
+
+### Routing
+
+* Enter ```run_routing```.
+
+* To view the design go to `/home/bigpoppa/OpenLane/designs/pes_tlc/runs/RUN_2023.10.30_13.41.08/results/routing`
+
+* Enter the command
+
+```bash
+
+magic -T /home/bigpoppa/OpenLane/pdks/sky130A/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def pes_tlc.def &
+
+```
+
+![8 routing](https://github.com/saneeaman9/Pes_tlc/assets/75088597/5d1ff93d-d70b-4b11-9f0c-18087ec8d1e9)
+
+![8_1 routing](https://github.com/saneeaman9/Pes_tlc/assets/75088597/0d9fda73-bd97-4f21-88dc-21760e29ddc1)
+
+
+**Congestion Report**
+
+![final congestion report](https://github.com/saneeaman9/Pes_tlc/assets/75088597/f973107c-8d99-40e4-9972-a82ad011182a)
+
+**Power & Clk Skew Report**
+
+![report power](https://github.com/saneeaman9/Pes_tlc/assets/75088597/8604e1e4-720b-4c22-ae4a-848d7dac227c)
+
+**Summary Report & Area Report**
+
+![summary report and area report](https://github.com/saneeaman9/Pes_tlc/assets/75088597/b6e27fa3-c754-45b7-b816-2b3ecd5a65ae)
